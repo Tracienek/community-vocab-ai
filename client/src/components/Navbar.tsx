@@ -33,7 +33,7 @@ export default function Navbar() {
         <div className="collapse navbar-collapse" id="mainNavbar">
           {/* Left items */}
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            <li className="nav-item"><NavLink className="nav-link" to="/">Home</NavLink></li>
+            <li className="nav-item"><NavLink className="nav-link" to="/HomePage">Home</NavLink></li>
             <li className="nav-item"><NavLink className="nav-link" to="/my-words">My Words</NavLink></li>
             <li className="nav-item"><NavLink className="nav-link" to="/add-word">Add Word</NavLink></li>
             <li className="nav-item"><NavLink className="nav-link" to="/about">About</NavLink></li>

@@ -1,3 +1,4 @@
+// client/src/services/authService.ts
 import { http } from './http';
 
 type User = { id: string; username: string; email: string };
