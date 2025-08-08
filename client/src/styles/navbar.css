@@ -1,0 +1,36 @@
+.navbar-pastel {
+  background-color: #d8b4f8 !important; /* nền tím pastel */
+}
+
+.navbar-pastel .navbar-brand,
+.navbar-pastel .nav-link,
+.navbar-pastel .text-muted {
+  color: #4a154b !important; /* chữ tím đậm */
+}
+
+.navbar-pastel .nav-link:hover {
+  color: #fff !important; /* chữ trắng khi hover */
+  background-color: #c084fc !important; /* nền tím hover */
+  border-radius: 5px;
+  transition: 0.2s;
+}
+
+.navbar-pastel .btn-outline-dark {
+  border-color: #4a154b;
+  color: #4a154b;
+}
+
+.navbar-pastel .btn-outline-dark:hover {
+  background-color: #4a154b;
+  color: #fff;
+}
+
+.navbar-pastel .btn-primary {
+  background-color: #a855f7;
+  border-color: #a855f7;
+}
+
+.navbar-pastel .btn-primary:hover {
+  background-color: #9333ea;
+  border-color: #9333ea;
+}

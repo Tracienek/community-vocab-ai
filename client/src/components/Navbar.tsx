@@ -1,4 +1,4 @@
-import { Link, NavLink, useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 
 export default function Navbar() {
@@ -11,35 +11,49 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary border-bottom">
+    <nav className="navbar navbar-expand-lg navbar-pastel">
       <div className="container">
-        <Link className="navbar-brand fw-semibold" to="/">Community Vocab AI</Link>
+        {/* Brand */}
+        <NavLink className="navbar-brand fw-semibold" to="/">StepLingua</NavLink>
 
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
-          <span className="navbar-toggler-icon"></span>
+        {/* Toggler */}
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNavbar"
+          aria-controls="mainNavbar"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon" />
         </button>
 
-        <div id="nav" className="collapse navbar-collapse">
-          <ul className="navbar-nav me-auto">
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/">Home</NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/add-word">Add Word</NavLink>
-            </li>
+        {/* Collapsible content */}
+        <div className="collapse navbar-collapse" id="mainNavbar">
+          {/* Left items */}
+          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            <li className="nav-item"><NavLink className="nav-link" to="/">Home</NavLink></li>
+            <li className="nav-item"><NavLink className="nav-link" to="/my-words">My Words</NavLink></li>
+            <li className="nav-item"><NavLink className="nav-link" to="/add-word">Add Word</NavLink></li>
+            <li className="nav-item"><NavLink className="nav-link" to="/about">About</NavLink></li>
+            <li className="nav-item"><NavLink className="nav-link" to="/help">Help / FAQ</NavLink></li>
           </ul>
 
-          <div className="d-flex align-items-center gap-3">
+          {/* Right items */}
+          <div className="d-flex align-items-center gap-2">
             {user ? (
               <>
-                <span className="text-muted small">Hi, {user.name}</span>
-                <button className="btn btn-outline-dark btn-sm" onClick={handleLogout}>
-                  Logout
-                </button>
+                <div className="nav-item">
+                    <NavLink className="nav-link" to="/profile">
+                        <span className="text-muted small">Hi, {user.name}</span>
+                    </NavLink>
+                </div>
+                <button className="btn btn-outline-dark btn-sm" onClick={handleLogout}>Logout</button>
               </>
             ) : (
               <>
-                <NavLink className="btn btn-outline-primary btn-sm" to="/login">Login</NavLink>
+                <NavLink className="btn btn-outline-secondary btn-sm" to="/login">Login</NavLink>
                 <NavLink className="btn btn-primary btn-sm" to="/register">Register</NavLink>
               </>
             )}

@@ -1,0 +1,36 @@
+/* login */
+.auth-wrap {
+  min-height: calc(100dvh);
+  background: linear-gradient(135deg, #d7bbf6 0%, #d8c7f1 40%, #fdfbff 100%);
+  padding: 24px;
+}
+
+/* card login */
+.auth-card {
+  max-width: 420px;
+  width: 100%;
+  border: 0;
+  border-radius: 16px;
+}
+
+.text-brand { color: #4a154b; }
+
+.btn-brand {
+  background-color: #a855f7;
+  border-color: #a855f7;
+  color: #fff;
+}
+.btn-brand:hover {
+  background-color: #9333ea;
+  border-color: #9333ea;
+}
+
+.link-brand { 
+    color: #a855f7; 
+}
+
+.link-brand:hover { 
+    color: #5b21b6; 
+}
+
+
