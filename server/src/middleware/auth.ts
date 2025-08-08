@@ -3,14 +3,15 @@ import jwt from 'jsonwebtoken';
 
 export interface JwtPayload { id: string; username: string; }
 
-// bổ sung type cho req.user
-declare module 'express-serve-static-core' {
-  interface Request {
-    user?: JwtPayload;
+/** Augment Express.Request: cách này không cần module name */
+declare global {
+  namespace Express {
+    interface Request {
+      user?: JwtPayload;
+    }
   }
 }
 
-// required mặc định là true (chữ thường!)
 export function auth(required = true) {
   return (req: Request, res: Response, next: NextFunction) => {
     const header = req.headers.authorization;
@@ -29,3 +30,5 @@ export function auth(required = true) {
     }
   };
 }
+
+export {};
